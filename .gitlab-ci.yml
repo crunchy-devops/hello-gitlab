@@ -18,6 +18,7 @@ analyze:sonar:
     paths:
       - .sonar/cache
   script:
+    - mvn deploy
     - sonar-scanner
   rules:
     # SonarQube CommunityEdition only supports analyzing a single branch.
