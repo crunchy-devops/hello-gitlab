@@ -65,10 +65,10 @@ simple:build:
       -DinstallAtEnd=true
       -DdeployAtEnd=true
 
-    # This template uses the latest Maven 3 release, e.g., 3.8.6, and OpenJDK 8 (LTS)
-    # for verifying and deploying images
-    # Maven 3.8.x REQUIRES HTTPS repositories.
-    # See https://maven.apache.org/docs/3.8.1/release-notes.html#how-to-fix-when-i-get-a-http-repository-blocked for more.
+  # This template uses the latest Maven 3 release, e.g., 3.8.6, and OpenJDK 8 (LTS)
+  # for verifying and deploying images
+  # Maven 3.8.x REQUIRES HTTPS repositories.
+  # See https://maven.apache.org/docs/3.8.1/release-notes.html#how-to-fix-when-i-get-a-http-repository-blocked for more.
   image: maven:3-openjdk-8
 
   # Cache downloaded dependencies and plugins between builds.
@@ -89,15 +89,15 @@ simple:build:
       variables:
         - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-# Verify merge requests using JDK8
+  # Verify merge requests using JDK8
   verify:jdk8:
     extends:
       - .verify
 
-# To deploy packages from CI, create a `ci_settings.xml` file
-# For deploying packages to GitLab's Maven Repository: See https://docs.gitlab.com/ee/user/packages/maven_repository/index.html#create-maven-packages-with-gitlab-cicd for more details.
-# Please note: The GitLab Maven Repository is currently only available in GitLab Premium / Ultimate.
-# For `master` or `main` branch run `mvn deploy` automatically.
+  # To deploy packages from CI, create a `ci_settings.xml` file
+  # For deploying packages to GitLab's Maven Repository: See https://docs.gitlab.com/ee/user/packages/maven_repository/index.html#create-maven-packages-with-gitlab-cicd for  more   details.
+  # Please note: The GitLab Maven Repository is currently only available in GitLab Premium / Ultimate.
+  # For `master` or `main` branch run `mvn deploy` automatically.
   deploy:jdk8:
     stage: deploy
     script:
