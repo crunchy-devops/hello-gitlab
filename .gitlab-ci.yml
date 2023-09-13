@@ -1,7 +1,21 @@
 stages:
+  - build
   - analyze
 
+build:maven:
+  stage: build
 
+  variables: 
+    MAVEN_OPTS: >-
+      -Dsonar.projectKey=hello-world
+      -Dsonar.host.url=$SONAR_URL
+      -Dsonar.scm.provider=git
+      -Dsonar.login=$SONAR_TOKEN
+      
+  image: maven:3.6.3-jdk-11
+  script: 
+    - mvn sonar:sonar package -U $MAVEN_OPTS
+    
 analyze:sonar:
   stage: analyze
   image: 
