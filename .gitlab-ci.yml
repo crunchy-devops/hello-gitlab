@@ -4,7 +4,9 @@ stages:
 
 analyze:sonar:
   stage: analyze
-  image: docker:dind
+  image: 
+    name: docker:dind
+    command: ["--tls=false"]
   services:
     - name: maven:3-openjdk-8
     - name: sonarsource/sonar-scanner-cli:4.5 
