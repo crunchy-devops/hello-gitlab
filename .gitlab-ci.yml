@@ -7,6 +7,7 @@ analyze:sonar:
   image: maven:3-openjdk-8
   services:
     - name: sonarsource/sonar-scanner-cli:4.5
+      entrypoint: ["tail -f /bin/null"]
   variables:
     # Defines the location of the analysis task cache
     SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
