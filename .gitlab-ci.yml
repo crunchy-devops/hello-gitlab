@@ -1,3 +1,8 @@
+workflow:
+  rules:
+    - if: "$CI_COMMIT_BRANCH"
+      when: manual
+
 stages:
   - build
 
@@ -16,8 +21,6 @@ build:maven:
   script: 
     - mvn sonar:sonar package -U $MAVEN_OPTS
 
-  rules:
-    when: manual    
 
 
 
