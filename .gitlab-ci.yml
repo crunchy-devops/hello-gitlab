@@ -1,6 +1,6 @@
 stages:
   - build
-  - analyze
+
 
 build:maven:
   stage: build
@@ -16,8 +16,8 @@ build:maven:
   script: 
     - mvn sonar:sonar package -U $MAVEN_OPTS
 
-rules:
-  when: manual    
+  rules:
+    when: manual    
 
 
 
