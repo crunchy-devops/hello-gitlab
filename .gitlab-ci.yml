@@ -14,7 +14,6 @@ build:maven:
       
   image: maven:3.6.3-jdk-11
   script: 
-    - ping 34.155.124.59
     - mvn sonar:sonar package -U $MAVEN_OPTS
     
 analyze:sonar:
