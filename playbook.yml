@@ -1,6 +1,8 @@
 ---
 - name: Installation de hello gitlab
   hosts: local
+  vars:
+    ansible_python_interpreter: python3
   tasks:
     - name: Start maven container
       docker_container:
