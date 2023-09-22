@@ -32,3 +32,11 @@
     - name: return value
       debug:
         msg: "{{ result.rc | trim }}"   
+    - name: build image
+      docker_image:
+        name: hello
+        build:
+          path: .
+        source: build
+      
+      

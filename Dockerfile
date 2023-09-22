@@ -7,4 +7,4 @@
 #RUN cp -R /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
 FROM fabric8/tomcat-9
 
-COPY *.war /opt/tomcat/webapps/
+COPY webapp/target/*.war /opt/tomcat/webapps/
