@@ -31,4 +31,4 @@
       register: result
     - name: return value
       debug:
-        msg: "{{ result.stdout | trim }}"   
+        msg: "{{ result.rc | trim }}"   
