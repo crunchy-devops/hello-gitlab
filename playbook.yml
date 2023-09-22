@@ -8,6 +8,7 @@
       docker_container:
         name: 'maven'
         image: maven:3.6.3-jdk-11
+        command: tail -f /dev/null
         state: 'started'
       register: result
     - name: get infos
