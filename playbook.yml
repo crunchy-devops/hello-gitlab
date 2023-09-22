@@ -14,4 +14,7 @@
       docker_container_info:
         name: 'maven'
       register: result
-      
+    - name: Get IP.address
+      debug: 
+        msg: "{{result.container.NetworkSettings.IPAddress}}"
+        
