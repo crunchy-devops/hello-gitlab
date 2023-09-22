@@ -17,4 +17,15 @@
     - name: Get IP.address
       debug: 
         msg: "{{result.container.NetworkSettings.IPAddress}}"
-        
+    - name: Add container maven 
+      add_host:
+        name: maven
+        ansible_connection: docker
+      change_when: false
+    - name: run command in maven 
+      delegate_to: maven
+      raw: mvn clean packages
+      register: result
+    - name: return value
+      debug:
+        msg: "{{ result.stdout | trim }}"   
