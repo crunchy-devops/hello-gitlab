@@ -38,5 +38,12 @@
         build:
           path: .
         source: build
+    - name: docker run 
+      docker_container:
+        name: myhello
+        image: hello
+        state: 'started'
+        ports:
+          - "32520:8080"
       
       
