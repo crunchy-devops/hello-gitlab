@@ -24,7 +24,7 @@
       changed_when: false
     - name: run command in maven 
       delegate_to: maven
-      raw: mvn clean packages
+      raw: mvn clean package
       register: result
     - name: return value
       debug:
