@@ -21,7 +21,7 @@
       add_host:
         name: maven
         ansible_connection: docker
-      change_when: false
+      changed_when: false
     - name: run command in maven 
       delegate_to: maven
       raw: mvn clean packages
