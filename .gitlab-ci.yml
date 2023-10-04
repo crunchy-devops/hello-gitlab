@@ -8,6 +8,7 @@ workflow:
 stages:
   - check
   - build
+  - docker-build
 
 
 build:check:
@@ -28,7 +29,13 @@ build:maven:
   image: maven:3.6.3-jdk-11
   script: 
     - mvn sonar:sonar package -U $MAVEN_OPTS
+  artifacts:
+    paths:
+      - tar
 
+
+docker:build:
+  stage: docker-build
 
 
 
