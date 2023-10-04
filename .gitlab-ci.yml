@@ -6,8 +6,14 @@ workflow:
 
 
 stages:
-  - build
+  - check
+  #- build
 
+
+build:check:
+  stage: check
+  script:
+    - echo $SONAR_HOST_URL
 
 build:maven:
   stage: build
