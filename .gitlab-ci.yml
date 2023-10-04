@@ -36,6 +36,8 @@ build:maven:
 
 docker:build:
   stage: docker-build
+  services:
+    - docker:dind
   dependencies:
     - build:maven
   script:
