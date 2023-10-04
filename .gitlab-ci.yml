@@ -39,7 +39,7 @@ docker:build:
   dependencies:
     - build:maven
   script:
-    - ls -alrt webapp.war
+    - find / -name webapp.war -print 2>/dev/null
 
 
 
