@@ -7,7 +7,7 @@ workflow:
 
 stages:
   - check
-  #- build
+  - build
 
 
 build:check:
