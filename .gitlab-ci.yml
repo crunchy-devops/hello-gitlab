@@ -15,7 +15,7 @@ build:maven:
   variables: 
     MAVEN_OPTS: >-
       -Dsonar.projectKey=hello-world
-      -Dsonar.host.url=$SONAR_URL
+      -Dsonar.host.url=$SONAR_HOST_URL
       -Dsonar.scm.provider=git
       -Dsonar.login=$SONAR_TOKEN
       
