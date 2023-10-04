@@ -31,12 +31,15 @@ build:maven:
     - mvn sonar:sonar package -U $MAVEN_OPTS
   artifacts:
     paths:
-      - tar
+      - webapp/target/webapp.war
 
 
 docker:build:
   stage: docker-build
-
+  dependencies:
+    - build:maven
+  script:
+    - ls -alrt webapp.war
 
 
 
