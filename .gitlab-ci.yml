@@ -39,7 +39,7 @@ docker:build:
   dependencies:
     - build:maven
   script:
-    - find / -name webapp.war -print 2>/dev/null
+    - docker build -t hello-gitlab .
 
 
 
