@@ -6,15 +6,9 @@ workflow:
 
 
 stages:
-  - check
   - build
   - docker-build
-
-
-build:check:
-  stage: check
-  script:
-    - echo $SONAR_HOST_URL
+  - docker-run
 
 build:maven:
   stage: build
@@ -43,6 +37,11 @@ docker:build:
   script:
     - docker build -t hello-gitlab .
 
-
+docker:run:
+  stage: docker-run
+  services:
+    - docker:dind
+  script:
+    - docker run -d --name web -p 31888:8080 hello-gitlab
 
 
